@@ -83,6 +83,6 @@ class Dart_Crawl() :
 
 if __name__ == "__main__" :
     sched = BlockingScheduler()
-    sched.add_job(Dart_Crawl().main, 'cron', second='*/5')
+    sched.add_job(Dart_Crawl().main, 'cron', second='*/15')
     sched.start()
 
