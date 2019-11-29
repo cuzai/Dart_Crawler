@@ -1,7 +1,5 @@
 import openpyxl
 from lib.Cur_data import Cur_data
-from bs4 import BeautifulSoup
-import requests
 import sqlite3
 from apscheduler.schedulers.blocking import BlockingScheduler
 
@@ -78,11 +76,13 @@ class Dart_Crawl() :
                     self.append_result(result, cur_comp, cur_report, cur_link)
                     idx += 1
                 else :
-                    return result
+                    return print(result)
             else :
                 idx += 1
-        return result
+        return print(result)
 
 if __name__ == "__main__" :
-    result = Dart_Crawl().main()
-    print(result)
+    sched = BlockingScheduler()
+    sched.add_job(Dart_Crawl().main, 'cron', second='*/5')
+    sched.start()
+

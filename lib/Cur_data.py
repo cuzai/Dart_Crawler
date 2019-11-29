@@ -24,6 +24,6 @@ class Cur_data() :
 
         href = self.rows[idx].select('a')[1]['href']
         # print(href)
-        link = "".join(['http://dart.fss.or.kr/', href])
+        link = "".join(['http://dart.fss.or.kr', href])
 
         return cur_comp, cur_report, link
