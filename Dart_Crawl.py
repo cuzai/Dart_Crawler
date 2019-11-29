@@ -1,30 +1,28 @@
 import openpyxl
+from lib.Cur_data import Cur_data
 from bs4 import BeautifulSoup
 import requests
 import sqlite3
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-
 class Dart_Crawl() :
     def __init__(self):
-        self.URL = 'http://dart.fss.or.kr/dsac001/mainAll.do'
-        self.conn = sqlite3.connect('./data.db', check_same_thread=False)
-        self.c = self.conn.cursor()
-        self.c.execute("CREATE TABLE IF NOT EXISTS data(comp text, report text)")
+        self.comp_list = self.read_xlsx()
+        self.c = self.set_db()[1]
+
+    def set_db(self):
+        conn = sqlite3.connect('./data/data.db', check_same_thread=False)
+        c = conn.cursor()
+        c.execute("CREATE TABLE IF NOT EXISTS data(comp text, report text, link text)")
+        return conn, c
 
     def read_xlsx(self):
-        wb = openpyxl.load_workbook('종목리스트_통합_19.08.18.xlsx')
+        wb = openpyxl.load_workbook('./res/종목리스트_통합_19.08.18.xlsx')
         ws = wb.active
-        result = []
-        for r in ws.rows :
-            result.append(r[2].value)
-        return result
-
-    def save_db(self, current_first_comp, current_first_report) :
-        # self.c.execute('INSERT INTO data VALUES(?, ?)', (current_first_comp,current_first_report))
-        self.c.execute('UPDATE data SET comp = ?', (current_first_comp, ))
-        self.c.execute('UPDATE data SET report = ?', (current_first_report, ))
-        self.conn.commit()
+        comp_list = []
+        for r in ws.rows:
+            comp_list.append(r[2].value)
+        return comp_list
 
     def get_db(self):
         comp = self.c.execute('SELECT comp FROM data')
@@ -33,66 +31,45 @@ class Dart_Crawl() :
         report = self.c.execute('SELECT report FROM data')
         report = self.c.fetchall()[0][0]
 
-        return comp, report
+        link = self.c.execute('SELECT link FROM data')
+        link = self.c.fetchall()[0][0]
 
-    def compare(self, new_first_comp, new_first_report):
-        if self.current_first_comp == new_first_comp and self.current_first_report == new_first_report:
+        return comp, report, link
+
+    def is_verified(self, comp_name):
+        if comp_name in self.comp_list :
             return True
 
-    def my_trim(self, word):
-        word = word.strip().replace("\r", "").replace("\n", "").replace("\t", "")
-        # print(word)
-        return word
-    def crawl(self):
-        current = self.get_db()
-        self.current_first_comp = current[0]
-        self.current_first_report = current[1]
+    def compare(self, db_link, cur_link):
+        if db_link == cur_link :
+            return True
 
-        req = requests.get(self.URL)
-        soup = BeautifulSoup(req.content, 'html.parser')
+    def append_result(self, result, comp_name, report, link):
+        result.append({'comp_name': comp_name, 'report': report, 'link': link})
 
-        first_row = soup.select_one('.table_list > table > tr')
-        new_first_comp = first_row.select_one('.nobr1').text
-        new_first_comp = self.my_trim(new_first_comp)
-        # print(new_first_comp)
-        new_first_report = first_row.select('td')[2].text
-        new_first_report = self.my_trim(new_first_report)
-        # print(new_first_report)
+    def main(self):
+        result = []
+        idx = 0
 
-        # compare current and old
-        if self.compare(new_first_comp, new_first_report) :
-            print("already same")
-            return
-        else :
-            # save current first
-            self.save_db(new_first_comp, new_first_report)
-            rows = soup.select('.table_list > table > tr')
+        db = self.get_db()
+        db_link = db[2]
 
-            # get links
-            result = []
-            for row in rows :
-                comp_name = row.select_one('.nobr1').text
-                comp_name = self.my_trim(comp_name)
-                # print(comp_name)
-
-                report = row.select('td')[2].text
-                report = self.my_trim(report)
-                # print(report)
-
-                href = row.select('a')[1]['href']
-                # print(href)
-                link = "".join(['http://dart.fss.or.kr/', href])
-                # print(link)
-
-                if comp_name == self.current_first_comp and report == self.current_first_report:
-                    print(result)
-                    return
+        cd = Cur_data()
+        while(idx < 100) :
+            cur_data = cd.get_cur_data(idx)
+            cur_comp = cur_data[0]
+            cur_report = cur_data[1]
+            cur_link = cur_data[2]
+            if self.is_verified(cur_comp) :
+                if not(self.compare(db_link, cur_link)) :
+                    self.append_result(result, cur_comp, cur_report, cur_link)
+                    idx += 1
                 else :
-                    result.append({'comp_name' : comp_name, 'report' : report, 'link' : link})
+                    return result
+            else :
+                idx += 1
+        return result
 
 if __name__ == "__main__" :
-    # Dart_Crawl().my_trim("기타시장안내\r\n\t\t\t\t\t\t\t\r\n  \t\t\t\t\t\t\t(관리종목 지정우려 예고)")
-    # Dart_Crawl().crawl()
-    sched = BlockingScheduler()
-    sched.add_job(Dart_Crawl().crawl, 'cron', second='*/5')
-    sched.start()
+    result = Dart_Crawl().main()
+    print(result)
