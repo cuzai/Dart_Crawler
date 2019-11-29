@@ -8,7 +8,9 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 class Dart_Crawl() :
     def __init__(self):
         self.comp_list = self.read_xlsx()
-        self.c = self.set_db()[1]
+        db = self.set_db()
+        self.conn = db[0]
+        self.c = db[1]
 
     def set_db(self):
         conn = sqlite3.connect('./data/data.db', check_same_thread=False)
@@ -23,6 +25,13 @@ class Dart_Crawl() :
         for r in ws.rows:
             comp_list.append(r[2].value)
         return comp_list
+
+    def save_db(self, cur_first_comp, cur_first_report, cur_first_link) :
+        # self.c.execute('INSERT INTO data VALUES(?, ?)', (current_first_comp,current_first_report))
+        self.c.execute('UPDATE data SET comp = ?', (cur_first_comp,))
+        self.c.execute('UPDATE data SET report = ?', (cur_first_report,))
+        self.c.execute('UPDATE data SET link = ?', (cur_first_link,))
+        self.conn.commit()
 
     def get_db(self):
         comp = self.c.execute('SELECT comp FROM data')
@@ -50,6 +59,7 @@ class Dart_Crawl() :
     def main(self):
         result = []
         idx = 0
+        is_first = True
 
         db = self.get_db()
         db_link = db[2]
@@ -62,6 +72,9 @@ class Dart_Crawl() :
             cur_link = cur_data[2]
             if self.is_verified(cur_comp) :
                 if not(self.compare(db_link, cur_link)) :
+                    if is_first :
+                        self.save_db(cur_comp, cur_report, cur_link)
+                        is_first = False
                     self.append_result(result, cur_comp, cur_report, cur_link)
                     idx += 1
                 else :
