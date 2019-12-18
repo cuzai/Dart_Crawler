@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "/home/cuzai/anaconda3/envs/Dart_Crawler/bin/python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "python.linting.flake8Args": [
+        "--max-line-length=88"
+    ]
+}
