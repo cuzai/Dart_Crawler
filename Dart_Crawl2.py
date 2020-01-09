@@ -1,9 +1,7 @@
 import openpyxl
 from lib.Cur_data2 import Cur_data
 import sqlite3
-from apscheduler.schedulers.background import BlockingScheduler
-import requests
-import simplejson as json
+from apscheduler.schedulers.blocking import BlockingScheduler
 
 
 class Dart_Crawl:
@@ -53,20 +51,19 @@ class Dart_Crawl:
         if db_link == cur_link:
             return True
 
-    def append_result(self, result, json_idx, comp_name, report, link):
-        result[json_idx] = {"comp_name": comp_name, "report": report, "link": link}
+    def append_result(self, result, comp_name, report, link):
+        result.append({"comp_name": comp_name, "report": report, "link": link})
 
-    def main(self):
-        result = {}
+    def run(self):
+        result = []
         idx = 0
-        json_idx = 0
         is_first = True
 
         db = self.get_db()
         db_link = db[2]
 
         cd = Cur_data()
-        while idx < 100:
+        while idx < 10:
             cur_data = cd.get_cur_data(idx)
             cur_comp = cur_data[0]
             cur_report = cur_data[1]
@@ -76,33 +73,16 @@ class Dart_Crawl:
                     if is_first:
                         self.save_db(cur_comp, cur_report, cur_link)
                         is_first = False
-                    self.append_result(result, json_idx, cur_comp, cur_report, cur_link)
-                    json_idx += 1
+                    self.append_result(result, cur_comp, cur_report, cur_link)
                     idx += 1
                 else:
-                    requests.post(
-                        url="http://localhost:8080/test",
-                        json=json.dumps(result, indent=4, ensure_ascii=False),
-                    )
-                    print(result)
-                    return
+                    return print(result)
             else:
                 idx += 1
-
-        requests.post(
-            url="http://localhost:8080/test",
-            json=json.dumps(result, indent=4, ensure_ascii=False),
-        )
-        print(result)
-        return
+        return print(result)
 
 
 if __name__ == "__main__":
     sched = BlockingScheduler()
-    sched.add_job(
-        Dart_Crawl().main, "cron", second="*/4", hour="8-18", day_of_week="mon-fri"
-    )
-
-    sched.add_job(Dart_Crawl().main, "cron", hour="22", day_of_week="mon-fri")
-
+    sched.add_job(Dart_Crawl().main, "cron", second="*/4")
     sched.start()

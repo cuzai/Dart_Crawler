@@ -4,15 +4,16 @@ import requests
 import time
 import random
 
-class test():
+
+class test:
     def __init__(self):
-        self.URL = 'http://dart.fss.or.kr/corp/searchCorp.ax'
+        self.URL = "http://dart.fss.or.kr/corp/searchCorp.ax"
 
     def read_xlsx(self):
-        wb = openpyxl.load_workbook('종목리스트_통합_19.08.18.xlsx')
+        wb = openpyxl.load_workbook("종목리스트_통합_19.08.18.xlsx")
         ws = wb.active
         result = []
-        for r in ws.rows :
+        for r in ws.rows:
             result.append(r[2].value.strip())
         return result
 
@@ -20,7 +21,7 @@ class test():
         return random.random()
 
     def write_down(self, comp_name):
-        with open('not_in_list.txt', 'at') as f :
+        with open("not_in_list.txt", "at") as f:
             f.write(comp_name)
             f.write("\n")
 
@@ -40,19 +41,20 @@ class test():
         #     print("ㅇㅇ")
         #     self.write_down("ㅇㅇ")
 
-        for comp_name in comp_name_li :
-            data = {'textCrpNm' : comp_name}
+        for comp_name in comp_name_li:
+            data = {"textCrpNm": comp_name}
             req = requests.post(self.URL, data)
-            soup = BeautifulSoup(req.content, 'html.parser')
-            result = soup.select('.table_scroll table tr .end.no_data2')
-            if result :
+            soup = BeautifulSoup(req.content, "html.parser")
+            result = soup.select(".table_scroll table tr .end.no_data2")
+            if result:
                 print(comp_name)
                 self.write_down(comp_name)
-            else :
+            else:
                 print(idx)
                 idx += 1
 
             time.sleep(self.rand_float())
 
-if __name__ == "__main__" :
+
+if __name__ == "__main__":
     test().main()

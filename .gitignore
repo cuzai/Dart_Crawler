@@ -2,6 +2,5 @@
 __pycache__/
 종목리스트_통합_19.08.18.xlsx
 not_in_list.txt
-data.db
+*.db
 Dart_Crawler_Flowchart.drawio
-Dart_Crawl2.py

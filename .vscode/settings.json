@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/cuzai/anaconda3/envs/Dart_Crawler/bin/python",
+    "python.pythonPath": "/home/cuzai/anaconda3/envs/Dart_crawl/bin/python",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.formatting.provider": "black",
