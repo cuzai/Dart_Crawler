@@ -4,6 +4,7 @@ import sqlite3
 from apscheduler.schedulers.background import BlockingScheduler
 import requests
 import simplejson as json
+import time
 
 
 class Dart_Crawl:
@@ -49,7 +50,7 @@ class Dart_Crawl:
         if comp_name in self.comp_list:
             return True
 
-    def compare(self, db_link, cur_link):
+    def is_same(self, db_link, cur_link):
         if db_link == cur_link:
             return True
 
@@ -58,7 +59,7 @@ class Dart_Crawl:
 
     def main(self):
         result = {}
-        idx = 0
+        idx = 1
         json_idx = 0
         is_first = True
 
@@ -72,37 +73,43 @@ class Dart_Crawl:
             cur_report = cur_data[1]
             cur_link = cur_data[2]
             if self.is_verified(cur_comp):
-                if not (self.compare(db_link, cur_link)):
+                if not (self.is_same(db_link, cur_link)):
                     if is_first:
                         self.save_db(cur_comp, cur_report, cur_link)
                         is_first = False
                     self.append_result(result, json_idx, cur_comp, cur_report, cur_link)
+                    # print(json_idx, cur_comp, cur_report, cur_link)
                     json_idx += 1
-                    idx += 1
                 else:
-                    requests.post(
-                        url="http://localhost:8080/test",
-                        json=json.dumps(result, indent=4, ensure_ascii=False),
-                    )
                     print(result)
                     return
-            else:
-                idx += 1
 
-        requests.post(
-            url="http://localhost:8080/test",
-            json=json.dumps(result, indent=4, ensure_ascii=False),
-        )
-        print(result)
-        return
+            idx += 1
+
+        # requests.post(
+        #     url="http://localhost:8080/test",
+        #     json=json.dumps(result, indent=4, ensure_ascii=False),
+        # )
+        # print("post")
+        # print(result)
+        with open("test.txt", "a") as a:
+            a.write(json.dumps(result, indent=4, ensure_ascii=False))
 
 
 if __name__ == "__main__":
+    # Dart_Crawl().main()
     sched = BlockingScheduler()
     sched.add_job(
-        Dart_Crawl().main, "cron", second="*/4", hour="8-18", day_of_week="mon-fri"
+        Dart_Crawl().main,
+        "cron",
+        second="*/4",
+        hour="7-18",
+        day_of_week="mon-fri"
+        #     Dart_Crawl().main,
+        #     "cron",
+        #     second="*/4",
+        #     hour="7-22",
     )
-
     sched.add_job(Dart_Crawl().main, "cron", hour="22", day_of_week="mon-fri")
 
     sched.start()

@@ -1,0 +1,432 @@
+{
+    "0": {
+        "comp_name": "KJ프리텍",
+        "report": "[기재정정]본점소재지변경",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901116"
+    },
+    "1": {
+        "comp_name": "라이트론",
+        "report": "[기재정정]소송등의제기ㆍ신청(경영권분쟁소송)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901114"
+    },
+    "2": {
+        "comp_name": "라이트론",
+        "report": "소송등의판결ㆍ결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901113"
+    },
+    "3": {
+        "comp_name": "이엘케이",
+        "report": "기타시장안내  (상장폐지 우려 및 관리종목 지정사유 추가 우려 관련 안내)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901112"
+    },
+    "4": {
+        "comp_name": "이엘케이",
+        "report": "내부결산시점관리종목지정또는상장폐지사유발생",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901105"
+    },
+    "5": {
+        "comp_name": "유안타증권",
+        "report": "증권관련집단소송에대한판결ㆍ결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801101"
+    },
+    "6": {
+        "comp_name": "서울리거",
+        "report": "유상증자또는주식관련사채등의청약결과(자율공시)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901076"
+    },
+    "7": {
+        "comp_name": "라이트론",
+        "report": "증권발행결과(자율공시)  (제3자배정 유상증자 - 출자전환)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901074"
+    },
+    "8": {
+        "comp_name": "아이에스동서",
+        "report": "단일판매ㆍ공급계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801077"
+    },
+    "9": {
+        "comp_name": "범양건영",
+        "report": "[기재정정]단일판매ㆍ공급계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801052"
+    },
+    "10": {
+        "comp_name": "신한제4호스팩",
+        "report": "기업인수목적회사의정관변경결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901072"
+    },
+    "11": {
+        "comp_name": "메디안디노스틱",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221601066"
+    },
+    "12": {
+        "comp_name": "현대약품",
+        "report": "[기재정정]감사보고서제출",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801038"
+    },
+    "13": {
+        "comp_name": "비티원",
+        "report": "투자판단관련주요경영사항",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801059"
+    },
+    "14": {
+        "comp_name": "동운아나텍",
+        "report": "[기재정정]최대주주변경을수반하는주식담보제공계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901046"
+    },
+    "15": {
+        "comp_name": "주성엔지니어링",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901031"
+    },
+    "16": {
+        "comp_name": "바이오로그디바이스",
+        "report": "주요사항보고서(전환사채권발행결정)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001638"
+    },
+    "17": {
+        "comp_name": "주성엔지니어링",
+        "report": "현금ㆍ현물배당결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901027"
+    },
+    "18": {
+        "comp_name": "버킷스튜디오",
+        "report": "전환사채(해외전환사채포함)발행후만기전사채취득  (제7회차)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901026"
+    },
+    "19": {
+        "comp_name": "라이브플렉스",
+        "report": "참고서류",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001649"
+    },
+    "20": {
+        "comp_name": "주성엔지니어링",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901022"
+    },
+    "21": {
+        "comp_name": "LS",
+        "report": "최대주주등소유주식변동신고서",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801067"
+    },
+    "22": {
+        "comp_name": "신한제4호스팩",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901056"
+    },
+    "23": {
+        "comp_name": "라이브플렉스",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901047"
+    },
+    "24": {
+        "comp_name": "참좋은여행",
+        "report": "주주총회집중일개최사유신고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901060"
+    },
+    "25": {
+        "comp_name": "두올산업",
+        "report": "증권발행결과(자율공시)  (제9회차 CB)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901042"
+    },
+    "26": {
+        "comp_name": "한국금융지주",
+        "report": "[발행조건확정]증권신고서(채무증권)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001639"
+    },
+    "27": {
+        "comp_name": "체리부로",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901014"
+    },
+    "28": {
+        "comp_name": "참좋은여행",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901039"
+    },
+    "29": {
+        "comp_name": "아이엘사이언스",
+        "report": "주식매수선택권부여에관한신고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001637"
+    },
+    "30": {
+        "comp_name": "삼양통상",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변경",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801041"
+    },
+    "31": {
+        "comp_name": "아이엘사이언스",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901028"
+    },
+    "32": {
+        "comp_name": "오이솔루션",
+        "report": "연결재무제표기준영업실적등에대한전망(공정공시)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901020"
+    },
+    "33": {
+        "comp_name": "플럼라인생명과학",
+        "report": "[기재정정]주요사항보고서(유상증자결정)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001603"
+    },
+    "34": {
+        "comp_name": "라이브플렉스",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901008"
+    },
+    "35": {
+        "comp_name": "이에스에이",
+        "report": "[기재정정]주요사항보고서(유상증자결정)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001579"
+    },
+    "36": {
+        "comp_name": "지엘팜텍",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900981"
+    },
+    "37": {
+        "comp_name": "SK하이닉스",
+        "report": "참고서류",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001622"
+    },
+    "38": {
+        "comp_name": "호텔신라",
+        "report": "동일인등출자계열회사와의상품ㆍ용역거래",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001621"
+    },
+    "39": {
+        "comp_name": "두올산업",
+        "report": "주요사항보고서(전환사채권발행결정)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001595"
+    },
+    "40": {
+        "comp_name": "체리부로",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901011"
+    },
+    "41": {
+        "comp_name": "한국테크놀로지",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.krhttp://www.myht.co.kr"
+    },
+    "42": {
+        "comp_name": "삼성중공업",
+        "report": "참고서류",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001615"
+    },
+    "43": {
+        "comp_name": "호텔신라",
+        "report": "신규시설투자등",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801007"
+    },
+    "44": {
+        "comp_name": "미원홀딩스",
+        "report": "최대주주등소유주식변동신고서",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221801032"
+    },
+    "45": {
+        "comp_name": "호텔신라",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800994"
+    },
+    "46": {
+        "comp_name": "자연과환경",
+        "report": "[기재정정]단일판매ㆍ공급계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900983"
+    },
+    "47": {
+        "comp_name": "삼본전자",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221901000"
+    },
+    "48": {
+        "comp_name": "한국콜마홀딩스",
+        "report": "매출액또는손익구조30%(대규모법인15%)미만변경(자율공시)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800993"
+    },
+    "49": {
+        "comp_name": "한컴MDS",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900964"
+    },
+    "50": {
+        "comp_name": "SK하이닉스",
+        "report": "주주총회소집공고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001605"
+    },
+    "51": {
+        "comp_name": "삼성중공업",
+        "report": "주주총회집중일개최사유신고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800991"
+    },
+    "52": {
+        "comp_name": "옴니시스템",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900996"
+    },
+    "53": {
+        "comp_name": "SK하이닉스",
+        "report": "주식매수선택권부여에관한신고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001599"
+    },
+    "54": {
+        "comp_name": "삼성중공업",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800988"
+    },
+    "55": {
+        "comp_name": "중앙에너비스",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900985"
+    },
+    "56": {
+        "comp_name": "삼성중공업",
+        "report": "주주총회소집공고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001588"
+    },
+    "57": {
+        "comp_name": "메리츠금융지주",
+        "report": "참고서류",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001584"
+    },
+    "58": {
+        "comp_name": "SK하이닉스",
+        "report": "주주총회집중일개최사유신고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800968"
+    },
+    "59": {
+        "comp_name": "경남스틸",
+        "report": "감사보고서제출",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900973"
+    },
+    "60": {
+        "comp_name": "삼성화재해상보험",
+        "report": "최대주주등소유주식변동신고서",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800990"
+    },
+    "61": {
+        "comp_name": "호텔신라",
+        "report": "참고서류",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001576"
+    },
+    "62": {
+        "comp_name": "엑세스바이오",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900946"
+    },
+    "63": {
+        "comp_name": "에스퓨얼셀",
+        "report": "[기재정정]타인에대한채무보증결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900965"
+    },
+    "64": {
+        "comp_name": "진로발효",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900974"
+    },
+    "65": {
+        "comp_name": "W홀딩컴퍼니",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900963"
+    },
+    "66": {
+        "comp_name": "진로발효",
+        "report": "현금ㆍ현물배당결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900962"
+    },
+    "67": {
+        "comp_name": "엑사이엔씨",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900956"
+    },
+    "68": {
+        "comp_name": "한탑",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900953"
+    },
+    "69": {
+        "comp_name": "대한해운",
+        "report": "최대주주등소유주식변동신고서",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800975"
+    },
+    "70": {
+        "comp_name": "호텔신라",
+        "report": "주주총회소집공고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001554"
+    },
+    "71": {
+        "comp_name": "메리츠금융지주",
+        "report": "주주총회소집공고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001546"
+    },
+    "72": {
+        "comp_name": "흥아해운",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변경",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800957"
+    },
+    "73": {
+        "comp_name": "디오",
+        "report": "[기재정정]최대주주변경을수반하는주식담보제공계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900940"
+    },
+    "74": {
+        "comp_name": "SK하이닉스",
+        "report": "주주총회소집결의",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800941"
+    },
+    "75": {
+        "comp_name": "현대자동차",
+        "report": "특수관계인으로부터기타유가증권매수",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001538"
+    },
+    "76": {
+        "comp_name": "메리츠종금증권",
+        "report": "기업지배구조보고서공시",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800954"
+    },
+    "77": {
+        "comp_name": "롯데칠성음료",
+        "report": "[기재정정]타법인주식및출자증권취득결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800944"
+    },
+    "78": {
+        "comp_name": "KC그린홀딩스",
+        "report": "소송등의판결ㆍ결정(일정금액이상의청구)(자회사의 주요경영사항)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800924"
+    },
+    "79": {
+        "comp_name": "세미콘라이트",
+        "report": "조회공시요구(현저한시황변동)에대한답변(미확정)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900943"
+    },
+    "80": {
+        "comp_name": "NHN한국사이버결제",
+        "report": "주주총회집중일개최사유신고",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900925"
+    },
+    "81": {
+        "comp_name": "엑세스바이오",
+        "report": "매출액또는손익구조30%(대규모법인은15%)이상변동",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900912"
+    },
+    "82": {
+        "comp_name": "WI",
+        "report": "주식분할결정",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900926"
+    },
+    "83": {
+        "comp_name": "삼호",
+        "report": "단일판매ㆍ공급계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221800929"
+    },
+    "84": {
+        "comp_name": "제이엔케이히터",
+        "report": "[기재정정]단일판매ㆍ공급계약체결",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221900905"
+    },
+    "85": {
+        "comp_name": "이더블유케이",
+        "report": "[기재정정]주요사항보고서(전환사채권발행결정)",
+        "link": "http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20200221001468"
+    }
+}
