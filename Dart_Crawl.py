@@ -100,15 +100,15 @@ if __name__ == "__main__":
     # Dart_Crawl().main()
     sched = BlockingScheduler()
     sched.add_job(
-        # Dart_Crawl().main,
-        # "cron",
-        # second="*/4",
-        # hour="7-18",
-        # day_of_week="mon-fri"
         Dart_Crawl().main,
         "cron",
         second="*/4",
-        hour="7-22",
+        hour="7-18",
+        day_of_week="mon-fri"
+        # Dart_Crawl().main,
+        # "cron",
+        # second="*/4",
+        # hour="7-22",
     )
     sched.add_job(Dart_Crawl().main, "cron", hour="22", day_of_week="mon-fri")
 
