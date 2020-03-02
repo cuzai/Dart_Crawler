@@ -68,7 +68,10 @@ class Dart_Crawl:
 
         cd = Cur_data()
         while idx < 100:
-            cur_data = cd.get_cur_data(idx)
+            try:
+                cur_data = cd.get_cur_data(idx)
+            except IndexError:
+                pass
             cur_comp = cur_data[0]
             cur_report = cur_data[1]
             cur_link = cur_data[2]
