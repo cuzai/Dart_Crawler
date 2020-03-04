@@ -54,13 +54,14 @@ class Dart_Crawl:
         if db_link == cur_link:
             return True
 
-    def append_result(self, result, json_idx, comp_name, report, link):
-        result[json_idx] = {"comp_name": comp_name, "report": report, "link": link}
+    def append_result(self, result, comp_name, report, link):
+        result["data"].append(
+            {"company_name": comp_name, "report": report, "link": link}
+        )
 
     def main(self):
-        result = {}
+        result = {"data": []}
         idx = 1
-        json_idx = 0
         is_first = True
 
         db = self.get_db()
@@ -80,9 +81,8 @@ class Dart_Crawl:
                     if is_first:
                         self.save_db(cur_comp, cur_report, cur_link)
                         is_first = False
-                    self.append_result(result, json_idx, cur_comp, cur_report, cur_link)
+                    self.append_result(result, cur_comp, cur_report, cur_link)
                     # print(json_idx, cur_comp, cur_report, cur_link)
-                    json_idx += 1
                 else:
                     print(result)
                     return

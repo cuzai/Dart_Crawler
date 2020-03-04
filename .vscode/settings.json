@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/cuzai/anaconda3/envs/Dart_crawl/bin/python",
+    "python.pythonPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
     "python.linting.flake8Enabled": true,
     "python.linting.enabled": true,
     "python.formatting.provider": "black",
