@@ -89,11 +89,15 @@ class Dart_Crawl:
 
             idx += 1
 
-        requests.post(
+        response = requests.post(
             url="https://investalk.vingokorea.com/data",
-            json=json.dumps(result, indent=4, ensure_ascii=False),
+            # url="http://127.0.0.1:8080/test",
+            data=json.dumps(result),
+            headers={"Content-Type": "application/json", "Accept": "application/json"},
         )
         print("post")
+        print("status_code : ", response.status_code)
+        print(response.json)
         print(result)
         with open("test.txt", "a") as a:
             a.write(json.dumps(result, indent=4, ensure_ascii=False))
@@ -103,14 +107,14 @@ if __name__ == "__main__":
     # Dart_Crawl().main()
     sched = BlockingScheduler()
     sched.add_job(
-        Dart_Crawl().main,
-        "cron",
-        second="*/4",
-        hour="7-18",
-        day_of_week="mon-fri"
         # Dart_Crawl().main,
         # "cron",
         # second="*/4",
+        # hour="7-18",
+        # day_of_week="mon-fri"
+        Dart_Crawl().main,
+        "cron",
+        second="*/4",
         # hour="7-22",
     )
     sched.add_job(Dart_Crawl().main, "cron", hour="22", day_of_week="mon-fri")
