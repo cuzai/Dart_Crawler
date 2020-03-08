@@ -8,13 +8,9 @@ class Cur_data:
         req = requests.get(self.URL)
         soup = BeautifulSoup(req.content, "html.parser")
         self.rows = soup.select(".table_list tr")
-        # print(len(self.rows))
-
-        # self.write_html(soup)
 
     def my_trim(self, word):
         word = word.strip().replace("\r", "").replace("\n", "").replace("\t", "")
-        # print(word)
         return word
 
     def get_cur_data(self, idx):
@@ -31,13 +27,6 @@ class Cur_data:
         link = "".join(["http://dart.fss.or.kr", href])
 
         return cur_comp, cur_report, link
-
-    def write_html(self, soup):
-        with open("./temp.html", "a", encoding="utf-8") as w:
-            w.write(
-                "\n\n\n--------------------------------------------------------------------------------------\n------------------------------------------------------------------------------------------\n------------------------------------------------------------------\n\n\n"
-            )
-            w.write("{}\n".format(soup.prettify()))
 
 
 if __name__ == "__main__":

@@ -1,10 +1,13 @@
+import traceback
+
 import openpyxl
-from lib.Cur_data2 import Cur_data
 import sqlite3
 from apscheduler.schedulers.background import BlockingScheduler
 import requests
 import simplejson as json
-import time
+
+from lib.write_log import write_log
+from lib.Cur_data import Cur_data
 
 
 class Dart_Crawl:
@@ -71,8 +74,11 @@ class Dart_Crawl:
         while idx < 100:
             try:
                 cur_data = cd.get_cur_data(idx)
-            except IndexError:
-                pass
+            except (AttributeError, IndexError):
+                return
+            except Exception:
+                write_log(traceback.format_exc())
+
             cur_comp = cur_data[0]
             cur_report = cur_data[1]
             cur_link = cur_data[2]
@@ -91,31 +97,17 @@ class Dart_Crawl:
 
         response = requests.post(
             url="https://investalk.vingokorea.com/data",
-            # url="http://127.0.0.1:8080/test",
             data=json.dumps(result),
             headers={"Content-Type": "application/json", "Accept": "application/json"},
         )
-        print("post")
         print("status_code : ", response.status_code)
-        print(response.json)
         print(result)
-        with open("test.txt", "a") as a:
-            a.write(json.dumps(result, indent=4, ensure_ascii=False))
 
 
 if __name__ == "__main__":
-    # Dart_Crawl().main()
     sched = BlockingScheduler()
     sched.add_job(
-        Dart_Crawl().main,
-        "cron",
-        second="*/4",
-        hour="7-18",
-        day_of_week="mon-fri"
-        # Dart_Crawl().main,
-        # "cron",
-        # second="*/4",
-        # hour="7-22",
+        Dart_Crawl().main, "cron", second="*/4", hour="7-18", day_of_week="mon-fri"
     )
     sched.add_job(Dart_Crawl().main, "cron", hour="22", day_of_week="mon-fri")
 
